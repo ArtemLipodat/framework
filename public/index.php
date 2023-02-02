@@ -21,12 +21,12 @@ try {
     foreach($databaseExp->getTrace() as $key => $elem) {
         $trac[] = array_slice($databaseExp->getTrace()[$key], 0,2);
         foreach ($trac as $key => $value) {
+            $trace[] = $value['file'] . ':' . $value['line'] . PHP_EOL;
         }
-        $trace[] = $value['file'] . ':' . $value['line'] . PHP_EOL;
     }
     $errors['trace'] = $trace;
     $errors['date'] = \date("Y-m-d");
     $errors['sql'] = $databaseExp->getSql();
-    file_put_contents(__DIR__.'/controllerslog.txt', json_encode($errors) . PHP_EOL, FILE_APPEND);
+    file_put_contents(__DIR__.'/logs.txt', json_encode($errors) . PHP_EOL, FILE_APPEND);
 
 }
