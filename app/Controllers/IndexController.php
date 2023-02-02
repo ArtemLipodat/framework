@@ -1,8 +1,8 @@
 <?php
 namespace Application\Controllers;
 
+use Application\Core\View;
 use Application\Interfaces\Action;
-use Application\Views\View;
 
 class IndexController implements Action {
 

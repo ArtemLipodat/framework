@@ -4,8 +4,8 @@ namespace Application\Controllers;
 
 
 use Application\Core\Database;
+use Application\Core\View;
 use Application\Interfaces\Action;
-use Application\Views\View;
 
 class UserAddController implements Action {
 

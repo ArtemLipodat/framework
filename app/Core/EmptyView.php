@@ -1,5 +1,5 @@
 <?php
-namespace Application\Views;
+namespace Application\Core;
 
 class EmptyView {
 
