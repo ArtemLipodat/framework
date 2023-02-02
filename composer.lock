@@ -4,8 +4,50 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d751713988987e9331980363e24189ce",
-    "packages": [],
+    "content-hash": "e6f63cfb3c80e70fa75b7a6755844242",
+    "packages": [
+        {
+            "name": "co0lc0der/simple-query-builder",
+            "version": "v0.3.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/co0lc0der/simple-query-builder-php.git",
+                "reference": "8130c8f7a8082fe76101eb6bde0e364d2e6e8930"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/co0lc0der/simple-query-builder-php/zipball/8130c8f7a8082fe76101eb6bde0e364d2e6e8930",
+                "reference": "8130c8f7a8082fe76101eb6bde0e364d2e6e8930",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pdo": "*",
+                "php": ">=7.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "co0lc0der\\QueryBuilder\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "co0LC0Der",
+                    "email": "c0der@ya.ru"
+                }
+            ],
+            "description": "A small easy-to-use php component for working with a database by PDO. It provides some public methods to manipulate data. Each SQL query is prepared and safe.",
+            "support": {
+                "issues": "https://github.com/co0lc0der/simple-query-builder-php/issues",
+                "source": "https://github.com/co0lc0der/simple-query-builder-php/tree/v0.3.4"
+            },
+            "time": "2022-10-30T12:05:37+00:00"
+        }
+    ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",

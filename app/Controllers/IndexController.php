@@ -9,12 +9,9 @@ class IndexController implements Action {
 
     public function run() {
         $view = new View();
-        $view->content = $this->getViewContent();
+        $view->setTpl(VIEWPATH . 'index.php');
+        $view->form = $this->getViewForm();
         return $view;
-    }
-
-    function getViewContent(): View {
-        return $this->getViewForm();
     }
 
     protected function getViewForm(): View {

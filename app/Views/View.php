@@ -5,7 +5,6 @@ class View {
     private $tpl;
     private array $data = [];
     private array $widgets = [];
-    private string $layout = VIEWPATH . 'index.php';
 
     /**
      *
@@ -25,15 +24,7 @@ class View {
     }
 
     function display() {
-        if ($this->tpl){
-            include $this->tpl;
-        } else {
-            include $this->layout;
-        }
-    }
-
-    function setLayout($layout) {
-        if (file_exists($layout)) $this->layout = $layout;
+        if ($this->tpl) include $this->tpl;
     }
 
     function __set($name, $value) {

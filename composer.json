@@ -3,5 +3,8 @@
         "psr-4": {
             "Application\\" : "app/"
         }
+    },
+    "require": {
+        "co0lc0der/simple-query-builder": "^0.3.4"
     }
 }

@@ -7,6 +7,8 @@ use Application\Core\Database;
 use Application\Interfaces\Action;
 use Application\Models\Config\Debag;
 use Application\Views\View;
+use co0lc0der\QueryBuilder\Connection;
+use co0lc0der\QueryBuilder\QueryBuilder;
 
 class UserAddController implements Action {
 
@@ -16,7 +18,7 @@ class UserAddController implements Action {
         $this->setValues($data);
     }
 
-    public function run() {
+    public function run(): View {
         $view = $this->getViewForm();
 
         if (!$this->checkValues() && $this->add()) {
@@ -34,7 +36,7 @@ class UserAddController implements Action {
         return $view;
     }
 
-    protected function getViewError($error, $success = false ) {
+    protected function getViewError($error, $success = false ): View {
         $view = new View();
         $view->setTpl( VIEWPATH . 'error.php');
         $view->assign('error', $error);
@@ -43,7 +45,7 @@ class UserAddController implements Action {
     }
 
 
-    private function checkValues() {
+    private function checkValues(): bool {
         $values = $this->getValues();
 
         foreach ($values as $k => $val) {
@@ -62,18 +64,10 @@ class UserAddController implements Action {
     }
 
 
-    private function add() {
+    private function add(): int {
         $db = Database::getInstance();
-        $keys = null;
-        $values = null;
-        foreach ($this->getValues() as $k => $v) {
-            $keys[] = $k;
-            $values[] =  "'" . $db->getConnection()->real_escape_string($v) . "'";;
-        }
-
-        $sql = 'INSERT INTO USERS ('. implode(',', $keys) .') VALUES ('. implode(',', $values) .')';
-
-        return $db->insert($sql);
+        $values = $this->getValues();
+        return $db->insert('users', $values)->go();
     }
 
 
