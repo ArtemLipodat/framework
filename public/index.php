@@ -5,6 +5,7 @@ use Application\Router;
 
 require_once('../vendor/autoload.php');
 require_once('../app/Router.php');
+require_once ('../app/define.php');
 
 $path = $_SERVER['REQUEST_URI'];
 

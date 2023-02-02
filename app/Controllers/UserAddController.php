@@ -30,13 +30,13 @@ class UserAddController implements Action {
 
     protected function getViewForm(): View {
         $view = new View();
-        $view->setTpl('C:\OSPanel\domains\framework\app\Views\form.php');
+        $view->setTpl(VIEWPATH . 'form.php');
         return $view;
     }
 
     protected function getViewError($error, $success = false ) {
         $view = new View();
-        $view->setTpl( 'C:\OSPanel\domains\framework\app\Views\error.php');
+        $view->setTpl( VIEWPATH . 'error.php');
         $view->assign('error', $error);
         $view->assign('success', $success);
         return $view;

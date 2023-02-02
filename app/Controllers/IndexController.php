@@ -9,14 +9,17 @@ class IndexController implements Action {
 
     public function run() {
         $view = new View();
-        $view->setTpl('C:\OSPanel\domains\framework\app\Views\index.php');
-        $view->form = $this->getViewForm();
+        $view->content = $this->getViewContent();
         return $view;
+    }
+
+    function getViewContent(): View {
+        return $this->getViewForm();
     }
 
     protected function getViewForm(): View {
         $view = new View();
-        $view->setTpl('C:\OSPanel\domains\framework\app\Views\form.php');
+        $view->setTpl(VIEWPATH . 'form.php');
         return $view;
     }
 
