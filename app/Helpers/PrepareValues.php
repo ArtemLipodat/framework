@@ -1,9 +1,10 @@
 <?php
 
-namespace Application\Models;
+namespace Application\Helpers;
 
 class PrepareValues {
-    public function get(array $fields, array $values) {
+
+    public function get(array $fields, array $values): array {
         $r = [];
         foreach ($fields as $nameEn => $field) {
             if (!isset($values[$nameEn])) continue;
@@ -13,7 +14,6 @@ class PrepareValues {
                 case 'int';
                 case 'phone';
                     $value = (int)$value;
-
                     $r[$field['name']] = $value ;
                     break;
                 case 'string';
@@ -24,4 +24,5 @@ class PrepareValues {
         }
         return $r;
     }
+
 }

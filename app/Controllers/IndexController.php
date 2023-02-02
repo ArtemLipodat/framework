@@ -2,7 +2,6 @@
 namespace Application\Controllers;
 
 use Application\Interfaces\Action;
-use Application\Models\Config\Debag;
 use Application\Views\View;
 
 class IndexController implements Action {
@@ -10,6 +9,7 @@ class IndexController implements Action {
     public function run() {
         $view = new View();
         $view->setTpl(VIEWPATH . 'index.php');
+        $view->assign('title', 'Заголовок браузера');
         $view->form = $this->getViewForm();
         return $view;
     }

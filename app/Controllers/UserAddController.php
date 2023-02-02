@@ -5,10 +5,7 @@ namespace Application\Controllers;
 
 use Application\Core\Database;
 use Application\Interfaces\Action;
-use Application\Models\Config\Debag;
 use Application\Views\View;
-use co0lc0der\QueryBuilder\Connection;
-use co0lc0der\QueryBuilder\QueryBuilder;
 
 class UserAddController implements Action {
 
